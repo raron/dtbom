@@ -173,7 +173,7 @@ void ImportCSV::done(int r)
         }
         else
         {
-            QMessageBox::warning(this, "szar", "szar a refdes", QMessageBox::Ok);
+            QMessageBox::warning(this, trUtf8("Warning"), trUtf8("You have to use RefDes column!"), QMessageBox::Ok);
         }
     }
     else

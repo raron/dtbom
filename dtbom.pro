@@ -34,7 +34,7 @@ FORMS    += mainwindow.ui \
 
 QMAKE_CXXFLAGS += -std=c++11
 
-VERSION = 0.2
+VERSION = 0.2.0
 DB_VERSION = 1
 
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"

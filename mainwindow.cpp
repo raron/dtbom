@@ -210,13 +210,13 @@ void MainWindow::updatePartList()
     }
     else if (ui->partListSelect->currentIndex() == 2)
     {
-        partListQuery.exec("select 'torolt' Info, refdes, part, type, value, pattern from parts where id not in (select parts.id from parts inner join import on (parts.id = import.id)) "
+        partListQuery.exec("select 'deleted' Info, refdes, part, type, value, pattern from parts where id not in (select parts.id from parts inner join import on (parts.id = import.id)) "
                            "union "
-                           "select 'uj' Info, refdes, part, type, value, pattern from import where id not in (select parts.id from parts inner join import on (parts.id = import.id)) "
+                           "select 'new' Info, refdes, part, type, value, pattern from import where id not in (select parts.id from parts inner join import on (parts.id = import.id)) "
                            "union "
-                           "select 'valtozott' Info, refdes, part, type, value, pattern from import where id not in (select parts.id from parts inner join import on (parts.id = import.id and parts.value = import.value and parts.pattern = import.pattern)) "
+                           "select 'updated' Info, refdes, part, type, value, pattern from import where id not in (select parts.id from parts inner join import on (parts.id = import.id and parts.value = import.value and parts.pattern = import.pattern)) "
                            "except "
-                           "select'valtozott' Info, refdes, part, type, value, pattern from import where id not in (select parts.id from parts inner join import on (parts.id = import.id or parts.value = import.value or parts.pattern = import.pattern)) ");
+                           "select'updated' Info, refdes, part, type, value, pattern from import where id not in (select parts.id from parts inner join import on (parts.id = import.id or parts.value = import.value or parts.pattern = import.pattern)) ");
     }
     else
     {
@@ -447,4 +447,21 @@ void MainWindow::on_actionImport_from_CSV_triggered()
         }
 
     }
+}
+
+void MainWindow::on_actionAbout_Qt_triggered()
+{
+    QApplication::aboutQt();
+}
+
+void MainWindow::on_actionAbout_triggered()
+{
+    QMessageBox::information(this, trUtf8("About"),
+                             trUtf8("<h3>About DtBom</h3><br/>"
+                                    "Version: %1<br/>"
+                                    "Created by RADICS Áron (raron)<br/>"
+                                    "<a href=\"https://github.com/raron/dtbom/blob/master/LICENSE.md\">License: GNU GPLv2</a><br/>"
+                                    "<a href=\"https://github.com/raron/dtbom\">Webpage: github.com/raron/dtbom</a><br/>"
+                                    )
+                             .arg(QApplication::applicationVersion()));
 }

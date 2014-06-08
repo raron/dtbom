@@ -66,6 +66,10 @@ private slots:
 
     void on_actionImport_from_CSV_triggered();
 
+    void on_actionAbout_Qt_triggered();
+
+    void on_actionAbout_triggered();
+
 private:
     Ui::MainWindow *ui;
     QList<WebShopScript> webShopScripts;

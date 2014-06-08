@@ -157,8 +157,16 @@
     <addaction name="actionParts_group_by_shop"/>
     <addaction name="actionFile_info"/>
    </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAbout_Qt"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuInfo"/>
+   <addaction name="menuHelp"/>
   </widget>
   <action name="actionImport_from_DipTrace_ASCII">
    <property name="text">
@@ -228,6 +236,16 @@
     <string>Export to CSV by shop</string>
    </property>
   </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -262,8 +280,8 @@
    <slot>forward()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>245</x>
-     <y>36</y>
+     <x>261</x>
+     <y>61</y>
     </hint>
     <hint type="destinationlabel">
      <x>258</x>
