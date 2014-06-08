@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 
-
 #include <QMainWindow>
 #include <QUrl>
 #include <QModelIndex>
@@ -18,6 +17,7 @@
 #include <QMessageBox>
 #include <QInputDialog>
 #include <QDateTime>
+#include <QApplication>
 
 #include <QSqlDatabase>
 #include <QSqlQuery>

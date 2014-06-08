@@ -34,7 +34,7 @@ MainWindow::MainWindow(QSqlDatabase _db, QWidget *parent) :
     connect(ui->webView, SIGNAL(loadProgress(int)), ui->progressBar, SLOT(setValue(int)));
     connect(ui->webView, SIGNAL(loadFinished(bool)), this, SLOT(loaded(bool)));
 
-    webShopScripts << WebShopScript::fromDir("scripts");
+    webShopScripts << WebShopScript::fromDir(QApplication::applicationDirPath() + "/scripts");
     for(int i = 0; i < webShopScripts.size(); i++)
         ui->webShopSelect->addItem(webShopScripts[i].getName());
 
