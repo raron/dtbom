@@ -2,6 +2,8 @@ DtBom is a simple PCB/Schematic component "manager" software. (Image at the end 
 
 There are hundreds of components on a bigger PCB/schematic. When you order the components form an webshop, you have to select those one by one, update your BOM list, etc.
 
+See wiki page: https://github.com/raron/dtbom/wiki
+
 DtBom simplifies this process:
 1. Export the part-list or component-list from your PCB/schematic designer software and import it into DtBom.
 2. Select a component on the left side, the search page of your favorite webshop will appear on the right side.
